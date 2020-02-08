@@ -226,11 +226,6 @@ int main(int argc, char *argv[]) {
       for(int i = 0; i < size; i++){
 	myboard[i] = malloc(sizeof(int) * size);
         }
-// assign all space as not used in the beginning
-//for(int p = 0; p< size; p++){
-//	for(int q = 0; q< size; q++ ){
-//		*(*(myboard + p)+q) = 0;
-//	}
 
     //Read the file line by line.
     //Tokenize each line with respect to comma to store the values in your 2D array.
