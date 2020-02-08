@@ -6,7 +6,7 @@
 
 char *COMMA = ",";  
 
-/* COMPLETED:       
+/*       
  * Retrieves from the first line of the input file,
  * the size of the board (number of rows and columns).
  * 
@@ -27,7 +27,7 @@ void get_dimensions(FILE *fp, int *size) {
 }   
 
 
-/* TODO:
+/* 
  * Returns 1 if and only if the board is in a valid state.
  * Otherwise returns 0.
  * 
@@ -188,7 +188,7 @@ int n_in_a_row(int **board, int size) {
 }     
 
 
-/* PARTIALLY COMPLETED:
+/*
  * This program prints Valid if the input file contains
  * a game board with either 1 or no winners; and where
  * there is at most 1 more X than O.
@@ -197,7 +197,7 @@ int n_in_a_row(int **board, int size) {
  * argv: CLA value
  */
 int main(int argc, char *argv[]) {              
-    //TODO: Check if number of command-line arguments is correct.
+   
         int argnum = 0;
 	for(int i = 0; i< argc; i++){
             argnum = argnum + 1;
@@ -216,9 +216,9 @@ int main(int argc, char *argv[]) {
     int size;
     int *sizepointer = &size;
 
-    //TODO: Call get_dimensions to retrieve the board size.
+   
     get_dimensions(fp,sizepointer );
-    //TODO: Dynamically allocate a 2D array of dimensions retrieved above.
+   
       int **myboard = malloc(sizeof(int) * size);
         if(myboard == NULL){
 	       exit(1);
@@ -241,16 +241,12 @@ int main(int argc, char *argv[]) {
 
         token = strtok(line, COMMA);
         for (int j = 0; j < size; j++){
-	
-            //TODO: Complete the line of code below
-            //to initialize your 2D array.
-            /* ADD ARRAY ACCESS CODE HERE */
 	    *(j+ *(myboard+i)) = atoi(token);
             token = strtok(NULL, COMMA);
         }
     }
 
-    //TODO: Call the function n_in_a_row and print the appropriate
+   
     //output depending on the function's return value.
 int result =  n_in_a_row(myboard, size);
 if(result == 0){
